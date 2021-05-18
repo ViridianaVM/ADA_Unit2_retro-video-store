@@ -21,7 +21,7 @@ def create_customer():
     #Reads the HTTP request boby with:
     request_body = request.get_json()
     if len(request_body) == 3:
-        new_customer = Customer(name = request_body["name"], postal_code = request_body["postal_code"], phone = request_body["phone"] )
+        new_customer = Customer(name = request_body["name"], postal_code = request_body["postal_code"], phone = request_body["phone"])
         
         db.session.add(new_customer)
         db.session.commit()
@@ -31,7 +31,7 @@ def create_customer():
         }
         return make_response(jsonify(response),201)
 
-    elif ("name" not in request_body) or ("postal_code" not in request_body) or ("phone" not in request_body):
+    elif ("name" not in request_body) or ("postal_code" not in request_body) or ("phone" not in request_body) or ("videos_checked_out_count" not in request_body):
         response = {
             "details" : "Invalid data"
         }
@@ -51,22 +51,18 @@ def get_customers():
 
 @customers_bp.route("/<customer_id>", methods=["GET"], strict_slashes=False)
 def get_one_customer(customer_id):
-    # if not(re.match("[0-9]",task_id)): 
-    #     return make_response(wrong_input(task_id),400)
 
     customer = Customer.query.get(customer_id)
     if customer:
         response = customer.to_json()
 
-        return make_response(jsonify(response), 200)
+        return make_response(response, 200)
 
     return make_response("",404)
 
 
 @customers_bp.route("/<customer_id>",methods=["PUT"], strict_slashes=False)
 def update_customer(customer_id):
-    # if not(re.match("[0-9]",customer_id)): 
-    #     return make_response(wrong_input(customer_id),400)
 
     updates_body = request.get_json()
     if customer_id is None or updates_body == {}:
@@ -77,18 +73,17 @@ def update_customer(customer_id):
         return make_response("",404)
 
     customer.name = updates_body["name"]
-    customer.postal_code = updates_body["postal_code"]
+    customer.postal_code = int(updates_body["postal_code"])
     customer.phone = updates_body["phone"]
 
     db.session.commit()
-    return make_response(jsonify(""),200)
+    return make_response(customer.to_json(),200)
 
 
 
 @customers_bp.route("/<customer_id>",methods=["DELETE"], strict_slashes=False)
 def delete_task(customer_id):
-    # if not(re.match("[0-9]",customer_id)): 
-    #     return make_response(wrong_input(customer_id),400)
+
     
     customer = Customer.query.get(customer_id)
     if customer is None:
@@ -96,11 +91,9 @@ def delete_task(customer_id):
 
     db.session.delete(customer)
     db.session.commit()
-    # return {
-    #     "id" : f"{customer_id}"
-    # }, 200
 
-    return make_response(jsonify(f"{customer_id}"),200)
+    response = {"id": int(customer_id)}
+    return make_response(response,200)
 
 
 
@@ -168,7 +161,7 @@ def update_video(video_id):
     video.total_inventory = updates_body["total_inventory"]
 
     db.session.commit()
-    return make_response(jsonify(""),200)
+    return make_response(video.to_json(),200)
 
 
 
@@ -182,5 +175,6 @@ def delete_video(video_id):
     db.session.delete(video)
     db.session.commit()
 
-    return make_response(jsonify(f"{video_id}"),200)
+    response = {"id": int(video_id)}
+    return make_response(response,200)
 
