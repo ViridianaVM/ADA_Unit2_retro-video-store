@@ -1,4 +1,5 @@
 from flask import current_app
+from sqlalchemy.orm import relationship
 from app import db
 from datetime import datetime
 
@@ -10,13 +11,8 @@ class Customer(db.Model):
     phone = db.Column(db.String)
     videos_checked_out_count = db.Column(db.Integer, default=0)
     registered_at = db.Column(db.DateTime, nullable=True)
-    
-    # def videos_checked(self):
-    #     if self.videos_checked_out_count is None:
-    #         videos_checked = 0
-    #     else:
-    #         videos_checked = self.videos_checked_out_count
-    #     return videos_checked
+    # video = relationship("Rental", back_populates="customer")
+
 
     def to_json(self):
         return {

@@ -1,6 +1,8 @@
 from flask import current_app
 from app import db
 from datetime import datetime
+from sqlalchemy.orm import relationship
+
 
 class Video(db.Model):
     __tablename__ = "videos"
@@ -9,7 +11,7 @@ class Video(db.Model):
     release_date = db.Column(db.DateTime, nullable=True)
     total_inventory = db.Column(db.Integer)
     available_inventory = db.Column(db.Integer)
-    
+    # customer = relationship("Rental", back_populates="video")
     
 
     def to_json(self):

@@ -4,6 +4,7 @@ from flask import request, Blueprint, make_response
 from flask import jsonify
 from .models.customer import Customer
 from .models.video import Video
+from .models.rental import Rental
 from dotenv import load_dotenv
 from datetime import datetime
 import os
@@ -11,6 +12,7 @@ import os
 
 customers_bp = Blueprint("customers", __name__, url_prefix="/customers")
 videos_bp = Blueprint("videos", __name__, url_prefix="/videos")
+rentals_bp = Blueprint("rentals", __name__, url_prefix="/rentals")
 
 """
 CRUD for Customer
