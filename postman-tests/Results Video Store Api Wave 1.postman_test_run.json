@@ -1,0 +1,897 @@
+{
+	"id": "184957fc-d60e-44e8-863e-de0f4ca05b06",
+	"name": "Video Store Api Wave 1",
+	"timestamp": "2021-05-18T18:43:50.199Z",
+	"collection_id": "af772f0b-4641-41aa-80f8-bd47b15466d8",
+	"folder_id": "e192bc6c-98f8-4f3e-abd5-73d12d9a9789",
+	"environment_id": "0",
+	"totalPass": 51,
+	"totalFail": 8,
+	"results": [
+		{
+			"id": "4924b481-28f9-48c3-b14c-fcfbf6c6836c",
+			"name": "List Customers",
+			"url": "http://localhost:5000/customers",
+			"time": 43,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returns 200": true,
+				"Won't give an error": true,
+				"response must be valid respond with json": true,
+				"Response must be an array": true
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Won't give an error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid respond with json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be an array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				43
+			],
+			"allTests": [
+				{
+					"Returns 200": true,
+					"Won't give an error": true,
+					"response must be valid respond with json": true,
+					"Response must be an array": true
+				}
+			]
+		},
+		{
+			"id": "a6d5a95b-6d7b-4405-ae68-3d681655e8ef",
+			"name": "http://localhost:5000/customers",
+			"url": "http://localhost:5000/customers",
+			"time": 134,
+			"responseCode": {
+				"code": 201,
+				"name": "CREATED"
+			},
+			"tests": {
+				"Returns 201": true,
+				"responds in json format": true,
+				"Response must be json with id key": true
+			},
+			"testPassFailCounts": {
+				"Returns 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"responds in json format": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be json with id key": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				134
+			],
+			"allTests": [
+				{
+					"Returns 201": true,
+					"responds in json format": true,
+					"Response must be json with id key": true
+				}
+			]
+		},
+		{
+			"id": "adf3fe67-7d90-4ae3-a69c-759a4466100a",
+			"name": "http://localhost:5000/customers",
+			"url": "http://localhost:5000/customers",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returns 200": true,
+				"Won't give an error": true,
+				"response must be valid respond with json": true,
+				"Response must be an array": true,
+				"Response must be 1 element longer": true
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Won't give an error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid respond with json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be 1 element longer": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Returns 200": true,
+					"Won't give an error": true,
+					"response must be valid respond with json": true,
+					"Response must be an array": true,
+					"Response must be 1 element longer": true
+				}
+			]
+		},
+		{
+			"id": "2f78f675-b4b5-4b01-b4ea-d89313b94746",
+			"name": "http://localhost:5000/customers",
+			"url": "http://localhost:5000/customers/30",
+			"time": 23,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returns 200": true,
+				"Won't give an error": true,
+				"response must be valid respond with json": true,
+				"Response must be an have the proper key-value pairs": false
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Won't give an error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid respond with json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be an have the proper key-value pairs": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				23
+			],
+			"allTests": [
+				{
+					"Returns 200": true,
+					"Won't give an error": true,
+					"response must be valid respond with json": true,
+					"Response must be an have the proper key-value pairs": false
+				}
+			]
+		},
+		{
+			"id": "a0c2ddea-8ff0-47ae-9ba7-8621d6cd8a09",
+			"name": "http://localhost:5000/customers/{{newCustomerId}}",
+			"url": "http://localhost:5000/customers/30",
+			"time": 52,
+			"responseCode": {
+				"code": 500,
+				"name": "INTERNAL SERVER ERROR"
+			},
+			"tests": {
+				"Returns 200": false,
+				"Won't give an error": false,
+				"response must be valid respond with json": false,
+				"Response must be an have the proper key-value pairs": false
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Won't give an error": {
+					"pass": 0,
+					"fail": 1
+				},
+				"response must be valid respond with json": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response must be an have the proper key-value pairs": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				52
+			],
+			"allTests": [
+				{
+					"Returns 200": false,
+					"Won't give an error": false,
+					"response must be valid respond with json": false,
+					"Response must be an have the proper key-value pairs": false
+				}
+			]
+		},
+		{
+			"id": "60428dfc-a55d-48fa-bd95-d368ac5b41c3",
+			"name": "http://localhost:5000/customers/",
+			"url": "http://localhost:5000/customers/30",
+			"time": 69,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Returns 400": true,
+				"responds in json format": true
+			},
+			"testPassFailCounts": {
+				"Returns 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"responds in json format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				69
+			],
+			"allTests": [
+				{
+					"Returns 400": true,
+					"responds in json format": true
+				}
+			]
+		},
+		{
+			"id": "358c379e-b6a3-434a-ae1b-2a656d5aeb98",
+			"name": "http://localhost:5000/customers/{{newCustomerId}}",
+			"url": "http://localhost:5000/customers/30",
+			"time": 19,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returns 200": true,
+				"Won't give an error": true,
+				"response must be valid respond with json": true,
+				"Response must an id-key-value pair": false
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Won't give an error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid respond with json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must an id-key-value pair": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				19
+			],
+			"allTests": [
+				{
+					"Returns 200": true,
+					"Won't give an error": true,
+					"response must be valid respond with json": true,
+					"Response must an id-key-value pair": false
+				}
+			]
+		},
+		{
+			"id": "4436341b-0bca-482f-b3f7-0fa97d8b5c78",
+			"name": "GET \"customers/<customer_id>\" request for previously deleted customer",
+			"url": "http://localhost:5000/customers/30",
+			"time": 12,
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND"
+			},
+			"tests": {
+				"Returns 404": true
+			},
+			"testPassFailCounts": {
+				"Returns 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"Returns 404": true
+				}
+			]
+		},
+		{
+			"id": "c62a32de-b132-4dda-8687-74f54bf8a576",
+			"name": "DELETE customers/{{newCustomerId}} with a deleted customer",
+			"url": "http://localhost:5000/customers/30",
+			"time": 30,
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND"
+			},
+			"tests": {
+				"Returns 404": true
+			},
+			"testPassFailCounts": {
+				"Returns 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				30
+			],
+			"allTests": [
+				{
+					"Returns 404": true
+				}
+			]
+		},
+		{
+			"id": "f64a003f-8d43-4d1e-bd2e-f9b0ce7ee337",
+			"name": "POST \"/customers\" with invalid data",
+			"url": "http://localhost:5000/customers",
+			"time": 24,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Returns 400": true,
+				"responds in json format": true
+			},
+			"testPassFailCounts": {
+				"Returns 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"responds in json format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				24
+			],
+			"allTests": [
+				{
+					"Returns 400": true,
+					"responds in json format": true
+				}
+			]
+		},
+		{
+			"id": "d8940cac-65e9-4dff-9a96-abb4d47fa198",
+			"name": "PUT Request to \"customers/{{newCustomerId}}\" for previously deleted customer",
+			"url": "http://localhost:5000/customers/30",
+			"time": 29,
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND"
+			},
+			"tests": {
+				"Returns 404": true
+			},
+			"testPassFailCounts": {
+				"Returns 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				29
+			],
+			"allTests": [
+				{
+					"Returns 404": true
+				}
+			]
+		},
+		{
+			"id": "71071428-59be-4d62-9d14-ea6f42c926a6",
+			"name": "http://localhost:5000/videos",
+			"url": "http://localhost:5000/videos",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returns 200": true,
+				"Won't give an error": true,
+				"response must be valid respond with json": true,
+				"Response must be an array": true
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Won't give an error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid respond with json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be an array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Returns 200": true,
+					"Won't give an error": true,
+					"response must be valid respond with json": true,
+					"Response must be an array": true
+				}
+			]
+		},
+		{
+			"id": "f6edd72d-0d74-4349-bb53-1c25e4b87b0c",
+			"name": "http://localhost:5000/videos",
+			"url": "http://localhost:5000/videos",
+			"time": 17,
+			"responseCode": {
+				"code": 201,
+				"name": "CREATED"
+			},
+			"tests": {
+				"Returns 201": true,
+				"responds in json format": true,
+				"Response must be json with id key": true
+			},
+			"testPassFailCounts": {
+				"Returns 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"responds in json format": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be json with id key": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Returns 201": true,
+					"responds in json format": true,
+					"Response must be json with id key": true
+				}
+			]
+		},
+		{
+			"id": "63b2f7fb-4f01-4806-9324-ed1af3c4a922",
+			"name": "http://localhost:5000/videos after adding a video",
+			"url": "http://localhost:5000/videos",
+			"time": 41,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returns 200": true,
+				"Won't give an error": true,
+				"response must be valid respond with json": true,
+				"Response must be an array": true
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Won't give an error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid respond with json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be an array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				41
+			],
+			"allTests": [
+				{
+					"Returns 200": true,
+					"Won't give an error": true,
+					"response must be valid respond with json": true,
+					"Response must be an array": true
+				}
+			]
+		},
+		{
+			"id": "25af31ec-e8b4-42a0-9047-83e31a00413a",
+			"name": "GET New Video",
+			"url": "http://localhost:5000/videos/26",
+			"time": 17,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returns 200": true,
+				"Won't give an error": true,
+				"response must be valid respond with json": true,
+				"Response must be an have the proper key-value pairs": true
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Won't give an error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid respond with json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be an have the proper key-value pairs": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Returns 200": true,
+					"Won't give an error": true,
+					"response must be valid respond with json": true,
+					"Response must be an have the proper key-value pairs": true
+				}
+			]
+		},
+		{
+			"id": "7375da95-73aa-4df0-bed3-2ff9188942e7",
+			"name": "http://localhost:5000/videos/{{newVideoId}",
+			"url": "http://localhost:5000/videos/26",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returns 200": true,
+				"Won't give an error": true,
+				"response must be valid respond with json": true,
+				"Response must be an have the proper key-value pairs": false
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Won't give an error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid respond with json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be an have the proper key-value pairs": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"Returns 200": true,
+					"Won't give an error": true,
+					"response must be valid respond with json": true,
+					"Response must be an have the proper key-value pairs": false
+				}
+			]
+		},
+		{
+			"id": "bf142a07-cb42-42af-8fc6-710b9583e744",
+			"name": "DELETE New Video",
+			"url": "http://localhost:5000/videos/26",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returns 200": true,
+				"Won't give an error": true,
+				"response must be valid respond with json": true,
+				"Response must include the id of the deleted video": false
+			},
+			"testPassFailCounts": {
+				"Returns 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Won't give an error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid respond with json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must include the id of the deleted video": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Returns 200": true,
+					"Won't give an error": true,
+					"response must be valid respond with json": true,
+					"Response must include the id of the deleted video": false
+				}
+			]
+		},
+		{
+			"id": "fb458f89-0ae4-4ff9-9048-c3d60de5ed57",
+			"name": "GET \"videos/<video_id>\" request for previously deleted video",
+			"url": "http://localhost:5000/videos/26",
+			"time": 9,
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND"
+			},
+			"tests": {
+				"Returns 404": true
+			},
+			"testPassFailCounts": {
+				"Returns 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Returns 404": true
+				}
+			]
+		},
+		{
+			"id": "ceed9d74-0f7c-4fdc-bf62-2ffc578171dd",
+			"name": "DELETE videos/{{newVideoId}} with a deleted video",
+			"url": "http://localhost:5000/videos/26",
+			"time": 11,
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND"
+			},
+			"tests": {
+				"Returns 404": true
+			},
+			"testPassFailCounts": {
+				"Returns 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Returns 404": true
+				}
+			]
+		},
+		{
+			"id": "5d75542a-51cd-4758-9f69-076d34f63b1a",
+			"name": "POST \"/videos\" with invalid data",
+			"url": "http://localhost:5000/videos",
+			"time": 103,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Returns 400": true,
+				"responds in json format": true
+			},
+			"testPassFailCounts": {
+				"Returns 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"responds in json format": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				103
+			],
+			"allTests": [
+				{
+					"Returns 400": true,
+					"responds in json format": true
+				}
+			]
+		},
+		{
+			"id": "d5240543-629e-4fe9-b933-212406dea020",
+			"name": "PUT Request to \"videos/{{newVideoId}}\" for previously deleted video",
+			"url": "http://localhost:5000/videos/26",
+			"time": 15,
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND"
+			},
+			"tests": {
+				"Returns 404": true
+			},
+			"testPassFailCounts": {
+				"Returns 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"Returns 404": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 707,
+	"collection": {
+		"requests": [
+			{
+				"id": "4924b481-28f9-48c3-b14c-fcfbf6c6836c",
+				"method": "GET"
+			},
+			{
+				"id": "a6d5a95b-6d7b-4405-ae68-3d681655e8ef",
+				"method": "POST"
+			},
+			{
+				"id": "adf3fe67-7d90-4ae3-a69c-759a4466100a",
+				"method": "GET"
+			},
+			{
+				"id": "2f78f675-b4b5-4b01-b4ea-d89313b94746",
+				"method": "GET"
+			},
+			{
+				"id": "a0c2ddea-8ff0-47ae-9ba7-8621d6cd8a09",
+				"method": "PUT"
+			},
+			{
+				"id": "60428dfc-a55d-48fa-bd95-d368ac5b41c3",
+				"method": "PUT"
+			},
+			{
+				"id": "358c379e-b6a3-434a-ae1b-2a656d5aeb98",
+				"method": "DELETE"
+			},
+			{
+				"id": "4436341b-0bca-482f-b3f7-0fa97d8b5c78",
+				"method": "GET"
+			},
+			{
+				"id": "c62a32de-b132-4dda-8687-74f54bf8a576",
+				"method": "DELETE"
+			},
+			{
+				"id": "f64a003f-8d43-4d1e-bd2e-f9b0ce7ee337",
+				"method": "POST"
+			},
+			{
+				"id": "d8940cac-65e9-4dff-9a96-abb4d47fa198",
+				"method": "PUT"
+			},
+			{
+				"id": "71071428-59be-4d62-9d14-ea6f42c926a6",
+				"method": "GET"
+			},
+			{
+				"id": "f6edd72d-0d74-4349-bb53-1c25e4b87b0c",
+				"method": "POST"
+			},
+			{
+				"id": "63b2f7fb-4f01-4806-9324-ed1af3c4a922",
+				"method": "GET"
+			},
+			{
+				"id": "25af31ec-e8b4-42a0-9047-83e31a00413a",
+				"method": "GET"
+			},
+			{
+				"id": "7375da95-73aa-4df0-bed3-2ff9188942e7",
+				"method": "PUT"
+			},
+			{
+				"id": "bf142a07-cb42-42af-8fc6-710b9583e744",
+				"method": "DELETE"
+			},
+			{
+				"id": "fb458f89-0ae4-4ff9-9048-c3d60de5ed57",
+				"method": "GET"
+			},
+			{
+				"id": "ceed9d74-0f7c-4fdc-bf62-2ffc578171dd",
+				"method": "DELETE"
+			},
+			{
+				"id": "5d75542a-51cd-4758-9f69-076d34f63b1a",
+				"method": "POST"
+			},
+			{
+				"id": "d5240543-629e-4fe9-b933-212406dea020",
+				"method": "PUT"
+			}
+		]
+	}
+}
